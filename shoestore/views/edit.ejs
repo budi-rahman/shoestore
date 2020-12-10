@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Shoe Store</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<body>
+    <h1>Shoe Store</h1>
+    
+
+	<form action="/shoes/edit/<%= data[0].id%>" method="post">
+		<div>
+			<label>Name</label>
+			<input type="text" name = "name" value = "<%= data[0].name %>" placeholder="Adidas Superstar">
+		</div>
+		<div>
+			<label>Type</label>
+			<select name = "type">
+				<option value="Formal">Formal</option>
+				<option value="Casual">Casual</option>
+				<option value="Boots">Boots</option>
+			</select>
+		</div>
+		<div>
+			<label>Min Size</label>
+			<input type="text" name = "minsize" value = "<%= data[0].minsize %>" placeholder="36">
+		</div>
+		<div>
+			<label>Max Size</label>
+			<input type="text" name = "maxsize" value = "<%= data[0].maxsize %>" placeholder="40">
+		</div>
+		<div>
+			<label>Status</label>
+			<select name = "status">
+				<option value="In Stock">In Stock</option>
+				<option value="Out of Stock">Out of Stock</option>
+				<option value="Discontinued">Discontinued</option>
+			</select>
+		</div>class="btn btn-default"
+		<div>
+            <input type = "hidden" name = "id" value = "<% data[0].id %>">
+			<button  class="btn btn-default" type="submit">Update</button>
+		</div>
+	</form>
+</body>
+
+</html>

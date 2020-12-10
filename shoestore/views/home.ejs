@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Shoe Store</title>
+</head>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<body>
+	<h1>Shoe Store</h1>
+
+    <a href="/shoes/add"><button class="btn btn-primary" >Add</button></a>
+    
+
+	<table border="1" class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Size</th>
+				<th>Status</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+            <% for (var i = 0; i< data.length; i++) { 
+                var minmax = `${data[i].minsize} - ${data[i].maxsize}`
+                %>
+			<tr>
+				<td><%= data[i].id %></td>
+				<td><%= data[i].name %></td>
+				<td><%= data[i].type %></td>
+				<td><%= minmax %></td>
+				<td><%= data[i].status %></td>
+				<td><a href="/shoes/edit/<%= data[i].id %>">Edit</a> | <a href="/shoes/delete/<%= data[i].id %>">Delete</a></td>
+            </tr>
+            <% } %>
+		</tbody>
+	</table>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Vans Old Skool",
+		"type": "Casual",
+		"minSize": 36,
+		"maxSize": 46,
+		"status": "In Stock"
+	},
+	{
+		"name": "Andrew Cullen",
+		"type": "Formal",
+		"minSize": 39,
+		"maxSize": 44,
+		"status": "Discontinued"
+	},
+	{
+		"name": "Timberland Brooklyn",
+		"type": "Boots",
+		"minSize": 39,
+		"maxSize": 51,
+		"status": "Out of Stock"
+	}
+]
