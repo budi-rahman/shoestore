@@ -30,14 +30,20 @@ class model {
     }
 
     static updateOne(data, cb){
+        console.log(data)
+        var updateq = `UPDATE "Shoes" SET name = '${data.name}', type = '${data.type}', minsize = ${data.minsize}, maxsize = ${data.maxsize}, status = '${data.status}' WHERE id = '${data.id}';`
 
-        var updateq = `UPDATE "Shoes"
-        SET name = "${data.name}"
-        SET type = "${data.type}"
-        SET minsize = ${data.minsize}
-        SET maxsize = ${data.maxsize}
-        SET status = ${data.status}
-        WHERE course_id = ${data.id};`
+        console.log(updateq)
+
+        pool.query(updateq, (err,res) => {
+            if (err){
+                cb(err)
+            }else {
+                cb(null, res.rows)
+            }
+        })
+
+        
     }
 
     static deleteOne(id, cb){
